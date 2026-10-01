@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-primary: #3e0078;
+  --color-brand-secondary: #282828;
+  --color-brand-highlight: #ffdd00;
+  --font-sans: var(--font-geist-sans);
+}
+
+body {
+  background: #fafafa;
+  color: #282828;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.btn-mpe {
+  background-color: #0000ee;
+  transition: background-color 0.3s;
+}
+
+.btn-mpe:hover {
+  background-color: #1f29b7;
+}
+
+.reveal-up {
+  transform: translateY(30px);
+  opacity: 0;
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
+}
+
+.reveal-up.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-rise-delay {
+  animation-delay: 0.18s;
+}
